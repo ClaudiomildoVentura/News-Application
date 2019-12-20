@@ -1,0 +1,12 @@
+root = true
+# As mesmas configurações sejam aplicadas para todos os arquivos
+[*]
+#Utilizar o charset utf-8
+charset = utf-8
+#Identação
+indent_size = 4
+indent_style = space
+#Não adicionar linhas em branco no final dos arquivos
+insert_final_newline = false
+#Apagar os espaços em brancos no final de cada linha
+trim_trailing_whitespace = true
