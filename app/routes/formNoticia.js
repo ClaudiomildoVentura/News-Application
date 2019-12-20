@@ -1,5 +1,5 @@
-module.exports = (app) => {
-    app.get('/formNoticia', function (req, res) {
+module.exports = (express) => {
+    express.get('/formNoticia', function (req, res) {
         res.render("admin/form_add_noticia")
     })
 }

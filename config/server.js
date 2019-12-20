@@ -1,7 +1,7 @@
 var express = require('express')
-var app = express()
+var express = express()
 
-app.set('view engine', 'ejs')
-app.set('views', './app/views')
+express.set('view engine', 'ejs')
+express.set('views', './app/views')
 
-module.exports = app
+module.exports = express

@@ -1,5 +1,5 @@
-module.exports = (app) => {
-    app.get('/', function (req, res) {
+module.exports = (express) => {
+    express.get('/', function (req, res) {
         res.render("home/index")
     })
 }
