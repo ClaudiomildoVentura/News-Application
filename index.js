@@ -1,11 +1,9 @@
-var express = require('./config/server')
+try {
+    var express = require('./config/server')
 
-require('./app/routes/formNoticia')(express)
-
-require('./app/routes/noticias')(express)
-
-require('./app/routes/home')(express)
-
-express.listen(2000, () => {
-    console.log('server On!')
-})
+    express.listen(2000, () => {
+        console.log('server On!')
+    })
+} catch (error) {
+    console.error(error)
+}
