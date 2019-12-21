@@ -10,6 +10,7 @@ try {
     consign()
         .include('app/routes')
         .then('config/ConnectionDatabase.js')
+        .then('app/models')
         .into(express)
 
     module.exports = express

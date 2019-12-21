@@ -1,16 +1,17 @@
-try {
+/* try {
     module.exports = (express) => {
 
-        express.get('/noticias', (req, res) => {
-
+        express.get('/noticia', (req, res) => {
+            
             var connection = express.config.ConnectionDatabase()
             var noticiasModel = express.app.models.noticiasModels
 
-            noticiasModel.getNoticias(connection, (error, result) => {
-                res.render("noticias/noticias", { noticias: result })
+
+            noticiasModel.getNoticia(connection, (error, result) => {
+                res.render("noticias/noticia", { noticia: result })
             })
         })
     }
 } catch (error) {
     console.log(error)
-}
+} */
