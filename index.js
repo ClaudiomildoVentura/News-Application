@@ -1,5 +1,5 @@
 try {
-    var express = require('./config/server')
+    var express = require('./config/Server')
 
     express.listen(2000, () => {
         console.log('server On!')

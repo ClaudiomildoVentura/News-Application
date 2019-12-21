@@ -7,9 +7,10 @@ try {
     express.set('view engine', 'ejs')
     express.set('views', './app/views')
 
-    consign().include('app/routes')
-    .then('config/connection.js')
-    .into(express)
+    consign()
+        .include('app/routes')
+        .then('config/ConnectionDatabase.js')
+        .into(express)
 
     module.exports = express
 
