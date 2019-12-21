@@ -1,6 +1,6 @@
+try {
 var mysql = require('mysql')
 
-try {
     module.exports = () => {
         return mysql.createConnection({
             host: 'localhost',

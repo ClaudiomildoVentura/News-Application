@@ -1,17 +1,16 @@
-var db = require('../../config/connection')
+try {
+    var db = require('../../config/connection')
 
-module.exports = (express) => {
-
-    try {
+    module.exports = (express) => {
 
         var connection = db()
-        express.get('/noticias', function (req, res) {
+        express.get('/noticias', (req, res) => {
 
             connection.query('select * from noticias', (error, result) => {
                 res.render("noticias/noticias", { noticias: result })
             })
         })
-    } catch (error) {
-        console.log(error)
     }
+} catch (error) {
+    console.log(error)
 }
