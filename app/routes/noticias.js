@@ -1,13 +1,13 @@
 try {
-    module.exports = (express) => {
+    module.exports = function (application) {
 
-        express.get('/noticias', (req, res) => {
+        application.get('/noticias', function (req, res) {
 
-            var connection = express.config.ConnectionDatabase()
-            var noticiasModel = express.app.models.noticiasModels
+            var connection = application.config.ConnectionDatabase()
+            var noticiasModel = new application.app.models.NoticiasDAO(connection)
 
-            noticiasModel.getNoticias(connection, (error, result) => {
-                res.render("noticias/noticias", { noticias: result })
+            noticiasModel.getNoticias(function (error, result) {
+                res.render('noticias/noticias', { noticias: result })
             })
         })
     }

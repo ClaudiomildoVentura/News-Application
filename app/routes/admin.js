@@ -8,9 +8,9 @@ try {
             var noticia = req.body
 
             var connection = express.config.ConnectionDatabase() //conexão
-            var noticiasModel = express.app.models.noticiasModels //model
+            var noticiasModel = new express.app.models.noticiasDAO(connection) //model
 
-            noticiasModel.salvarNoticia(noticia, connection, (error, result) => {
+            noticiasModel.salvarNoticia(noticia, (error, result) => {
                 res.redirect("/noticias")
             })
         })

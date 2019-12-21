@@ -4,10 +4,10 @@
         express.get('/noticia', (req, res) => {
             
             var connection = express.config.ConnectionDatabase()
-            var noticiasModel = express.app.models.noticiasModels
+            var noticiasModel = new express.app.models.noticiasDAO(connection)
 
 
-            noticiasModel.getNoticia(connection, (error, result) => {
+            noticiasModel.getNoticia((error, result) => {
                 res.render("noticias/noticia", { noticia: result })
             })
         })
