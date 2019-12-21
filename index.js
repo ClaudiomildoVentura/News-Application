@@ -1,7 +1,7 @@
 try {
-    var express = require('./config/Server')
+    var app = require('./config/Server')
 
-    express.listen(2000, () => {
+    app.listen(2000, () => {
         console.log('server On!')
     })
 } catch (error) {

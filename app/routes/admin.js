@@ -1,14 +1,14 @@
 try {
-    module.exports = (express) => {
-        express.get('/formNoticia', (req, res) => {
+    module.exports = (app) => {
+        app.get('/formNoticia', (req, res) => {
             res.render("admin/form_add_noticia")
         })
 
-        express.post('/noticias/salvar', (req, res) => {
+        app.post('/noticias/salvar', (req, res) => {
             var noticia = req.body
 
-            var connection = express.config.ConnectionDatabase() //conexão
-            var noticiasModel = new express.app.models.noticiasDAO(connection) //model
+            var connection = app.config.ConnectionDatabase() //conexão
+            var noticiasModel = new app.app.models.noticiasDAO(connection) //model
 
             noticiasModel.salvarNoticia(noticia, (error, result) => {
                 res.redirect("/noticias")

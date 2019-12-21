@@ -1,10 +1,10 @@
 /* try {
-    module.exports = (express) => {
+    module.exports = (app) => {
 
-        express.get('/noticia', (req, res) => {
+        app.get('/noticia', (req, res) => {
             
-            var connection = express.config.ConnectionDatabase()
-            var noticiasModel = new express.app.models.noticiasDAO(connection)
+            var connection = app.config.ConnectionDatabase()
+            var noticiasModel = new app.app.models.noticiasDAO(connection)
 
 
             noticiasModel.getNoticia((error, result) => {

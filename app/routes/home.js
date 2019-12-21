@@ -1,6 +1,6 @@
 try {
-    module.exports = (express) => {
-        express.get('/', (req, res) => {
+    module.exports = (app) => {
+        app.get('/', (req, res) => {
             res.render("home/index")
         })
     }
