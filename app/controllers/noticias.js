@@ -11,7 +11,7 @@ try {
 
     module.exports.noticiaControllers = function (app, req, res) {
 
-        var connection = app.config.ConnectionDatabase()
+        var connection = app.config.ConnectionDatabase() //conexão com o bd estabelecida
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
         noticiasModel.getNoticia(function (error, result) {

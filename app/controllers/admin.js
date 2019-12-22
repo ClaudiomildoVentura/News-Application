@@ -20,7 +20,7 @@ try {
             return
         }
 
-        var connection = app.config.ConnectionDatabase() //conexão
+        var connection = app.config.ConnectionDatabase() //conexão com o bd estabelecida
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
         noticiasModel.salvarNoticia(noticia, function (error, result) {

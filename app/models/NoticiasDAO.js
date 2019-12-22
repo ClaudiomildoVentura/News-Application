@@ -12,13 +12,17 @@ try {
     }
 
     NoticiasDAO.prototype.salvarNoticia = function (noticia, callback) {
-        console.log(noticia)
         this._connection.query('INSERT INTO noticias SET ?', noticia, callback)
+    }
+
+    NoticiasDAO.prototype.getUltimasNoticias = function (noticia, callback) {
+        this._connection.query('SELECT * FROM noticias ORDER BY data_criacao DESC LIMIT 5', noticia, callback)
     }
 
     module.exports = function () {
         return NoticiasDAO
     }
+
 } catch (error) {
     console.log(error)
 }
