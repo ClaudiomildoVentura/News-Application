@@ -19,6 +19,10 @@
 					<th scope="col">#</th>
 					<th scope="col">Título</th>
 					<th scope="col">Notícia</th>
+					<th scope="col">Data de Criação</th>
+					<th scope="col">Resumo</th>
+					<th scope="col">Autor</th>
+					<th scope="col">Data da Notícia</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +31,10 @@
 					<th scope="row"><%= noticias[i].id_noticia %></th>
 					<td><%= noticias[i].titulo %></td>
 					<td><%= noticias[i].noticia %></td>
+					<td><%= noticias[i].data_criacao %></td>
+					<td><%= noticias[i].resumo %></td>
+					<td><%= noticias[i].autor %></td>
+					<td><%= noticias[i].data_noticia %></td>
 				</tr>
 				<% } %>
 			</tbody>

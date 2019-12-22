@@ -10,19 +10,48 @@
 
 <body>
 	<div class="container">
-		<div class="p-3 mb-3 bg-dark text-white"><h4>Adicionar Notícia</h4></div>
+		<div class="p-3 mb-3 bg-dark text-white">
+			<h4>Adicionar Notícia</h4>
+		</div>
+
+		<% if (validacao) 	{ %>
+		<ul>
+			<% for (var i = 0; i < validacao.length; i++) { %>
+			<li>
+				<%= validacao[i].msg %>
+			</li>
+			<% } %>
+		</ul>
+		<% } %>
 
 		<form action="/noticias/salvar" method="post">
 			<div class="form-group">
 				<label>Título</label>
-				<input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título da Notícia">
+				<input class="form-control" type="text" id="titulo" name="titulo" value="<%=noticia.titulo%>" placeholder="Título da Notícia">
 			</div>
+
+			<div class="form-group">
+				<label>Resumo</label>
+				<input class="form-control" type="text" id="resumo" name="resumo" value="<%=noticia.resumo%>" placeholder="Resumo da Notícia">
+			</div>
+
+			<div class="form-group">
+				<label>Nome autor</label>
+				<input class="form-control" type="text" id="autor" name="autor" value="<%=noticia.autor%>" placeholder="Autor da Notícia">
+			</div>
+
+			<div class="form-group">
+				<label>Data dos Acontecimentos</label>
+				<input class="form-control" type="date" id="data_noticia" name="data_noticia" value="<%=noticia.data_noticia%>"
+					placeholder="Data da Notícia">
+			</div>
+
 			<div class="form-group">
 				<label>Notícia</label>
-				<textarea class="form-control" id="noticia" name="noticia" rows="5" cols="80"></textarea>
-				</div>
-				<button class="btn btn-dark" type="submit" value="Enviar">Enviar</button>
-	  </form>
+				<textarea class="form-control" id="noticia" name="noticia" rows="5" cols="80"><%=noticia.noticia%></textarea>
+			</div>
+			<button class="btn btn-dark" type="submit" value="Enviar">Enviar</button>
+		</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
