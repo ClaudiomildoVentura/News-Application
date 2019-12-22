@@ -16,7 +16,7 @@ try {
 
         var err = req.validationErrors()
         if (err) {
-            res.render("admin/form_add_noticia", { validacao: err, noticia: noticia })
+            res.render("admin/formNoticia", { validacao: err, noticia: noticia })
             return
         }
 
