@@ -3,88 +3,76 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Formulario de cadastro de Noticia</title>
+	<title>Formulário de Cadastro de Notícia</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="shortcut icon" href="images/favicon.ico" />
 	<link rel="stylesheet" href="css/style.css" />
 
 </head>
 
 <body>
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav class="navbar navbar-lights navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-					aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-
-				<img src="imgs/logo.png" />
+				<div class="p-1 mb-1 ml-1 bg-dark text-white">
+					<h4>Formulário de Cadastro de Notícia</h4>
+				</div>
 			</div>
-
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.html">HOME</a></li>
-				</ul>
+			<div class="btn-group " role="group">
+				<button type="button" class="btn btn-dark"><a href="/">Voltar para a Home</a></button>
+				<button type="button" class="btn btn-dark"><a href="/noticias">Listagem</a></button>
 			</div>
 		</div>
 	</nav>
 
 	<div class="container">
-		<!-- 	<div class="p-3 mb-3 bg-dark text-white">
-			<h4>Adicionar Notícia</h4>
-		</div>-->
-
-		<% if (validacao.length) { %>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="alert alert-danger">
-					<strong> Atenção!</strong>
-					<ul>
-						<% for (var i = 0; i < validacao.length; i++) { %>
-						<li><%= validacao[i].msg %></li>
-						<% } %>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<% } %>
 
 		<form action="/noticias/salvar" method="post">
+			<% if (validacao.length) { %>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-danger">
+						<strong> Atenção!</strong>
+						<ul>
+							<% for (var i = 0; i < validacao.length; i++) { %>
+							<li><%= validacao[i].msg %></li>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<% } %>
+
 			<div class="form-group">
-				<label>Título</label>
+				<label class="label_form">Título</label>
 				<input class="form-control" type="text" id="titulo" name="titulo" value="<%=noticia.titulo%>"
 					placeholder="Título da Notícia">
 			</div>
 
 			<div class="form-group">
-				<label>Resumo</label>
+				<label class="label_form">Resumo</label>
 				<input class="form-control" type="text" id="resumo" name="resumo" value="<%=noticia.resumo%>"
 					placeholder="Resumo da Notícia">
 			</div>
 
 			<div class="form-group">
-				<label>Nome autor</label>
+				<label class="label_form">Nome autor</label>
 				<input class="form-control" type="text" id="autor" name="autor" value="<%=noticia.autor%>"
 					placeholder="Autor da Notícia">
 			</div>
 
 			<div class="form-group">
-				<label>Data dos Acontecimentos</label>
+				<label class="label_form">Data dos Acontecimentos</label>
 				<input class="form-control" type="date" id="data_noticia" name="data_noticia"
 					value="<%=noticia.data_noticia%>" placeholder="Data da Notícia">
 			</div>
 
 			<div class="form-group">
-				<label>Notícia</label>
+				<label class="label_form">Notícia</label>
 				<textarea class="form-control" id="noticia" name="noticia" rows="5"
 					cols="80"><%=noticia.noticia%></textarea>
 			</div>
-			<button class="btn btn-dark" type="submit" value="Enviar">Enviar</button>
+			<button class="btn btn-dark btn-sm" type="submit" value="Enviar">Enviar</button>
 		</form>
 	</div>
 
