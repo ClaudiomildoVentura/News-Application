@@ -14,7 +14,9 @@ try {
         var connection = app.config.ConnectionDatabase() //conexão com o bd estabelecida
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
-        noticiasModel.getNoticia(function (error, result) {
+        var id_noticia = req.query
+
+        noticiasModel.getNoticia(id_noticia, function (error, result) {
             res.render("noticias/noticia", { noticia: result })
         })
     }

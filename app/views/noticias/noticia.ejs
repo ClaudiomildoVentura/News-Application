@@ -14,20 +14,48 @@
 		
 		<div class="p-3 mb-3 bg-dark text-white"><h4>Notícia</h4></div>
 
-	<table>
-		<tr>
-			<td>ID</td>
-			<td>Título</td>
-			<td>Notícia</td>
-		</tr>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 
-		<tr>
-			<td><%= noticia[0].id_noticia %></td>
-			<td><%= noticia[0].titulo %></td>
-			<td><%= noticia[0].noticia %></td>
-		</tr>
-		<% } %>
-	</table>
+				<img src="imgs/logo.png" />
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html">HOME</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="noticia_wrapper">
+					<span class="noticia_autor"><%=noticia[0].autor%></span>
+					<a href="noticia" class="noticia_titulo"><%=noticia[0].titulo%></a>
+					<span class="noticia_data"><%=noticia[0].criacao%></span>
+					<br />
+					<p class="noticia_resumo">
+						<%=noticia[0].noticia%>
+					</p>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+
 </div>
 
 </body>
