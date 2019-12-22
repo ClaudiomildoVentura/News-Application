@@ -14,6 +14,7 @@ try {
     consign()
         .include('app/routes')
         .then('config/ConnectionDatabase.js')
+        .then('app/controllers')
         .then('app/models')
         .into(app)
 
