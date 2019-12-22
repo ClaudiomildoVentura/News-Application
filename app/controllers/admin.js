@@ -7,12 +7,12 @@ try {
         var noticia = req.body
 
         /* validation with express validator */
-        req.assert('titulo', 'Título é obrigatório').notEmpty()
-        req.assert('resumo', 'Resumo é obrigatório').notEmpty()
-        req.assert('autor', 'Autor é obrigatório').notEmpty()
+        req.assert('titulo', 'O Título é obrigatório').notEmpty()
+        req.assert('resumo', 'O Resumo é obrigatório').notEmpty()
+        req.assert('autor', 'O autor é obrigatório').notEmpty()
         req.assert('resumo', 'Resumo deve conter entre 10 e 100 caracter').len(10, 100)
         //req.assert('data_noticia', 'Data inválida').isDate({format: 'YYYY-MM-DD'});
-        req.assert('noticia', 'Notícia é obrigatório').notEmpty()
+        req.assert('noticia', 'Notícia é essencial e obrigatória').notEmpty()
 
         var err = req.validationErrors()
         if (err) {

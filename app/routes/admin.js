@@ -1,5 +1,6 @@
 try {
     module.exports = function (app) {
+
         app.get('/formNoticia', function (req, res) {
             app.app.controllers.admin.formNoticiaControllers(app, req, res)
         })

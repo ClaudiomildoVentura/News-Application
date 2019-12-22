@@ -1,8 +1,8 @@
 {
-  "name": "JavaScript",
+  "name": "News",
   "version": "1.0.0",
   "description": "",
-  "main": "y.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/claudiomildo/JavaScript.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Claudiomildo V",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/claudiomildo/JavaScript/issues"
