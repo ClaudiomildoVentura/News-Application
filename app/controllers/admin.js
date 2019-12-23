@@ -1,9 +1,10 @@
 try {
-    module.exports.formNoticiaControllers = function (app, req, res) {
+    module.exports.formNoticiasControllers = (app, req, res) => {
         res.render("admin/formNoticia", { validacao: {}, noticia: {} })
     }
 
-    module.exports.noticias_salvarControllers = function name(app, req, res) {
+    module.exports.noticiasSalvarControllers = (app, req, res) => {
+
         var noticia = req.body
 
         /* validation with express validator */
@@ -23,7 +24,7 @@ try {
         var connection = app.config.ConnectionDatabase() //conexão com o bd estabelecida
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
-        noticiasModel.salvarNoticia(noticia, function (error, result) {
+        noticiasModel.salvarNoticiasModel(noticia, (error, result) => {
             res.redirect("/noticias")
         })
     }

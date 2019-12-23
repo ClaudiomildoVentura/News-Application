@@ -1,11 +1,11 @@
 try {
-    module.exports = function (app) {
+    module.exports = (app) => {
 
-        app.get('/noticias', function (req, res) {
+        app.get('/noticias', (req, res) => {
             app.app.controllers.noticias.noticiasControllers(app, req, res)
         })
 
-        app.get('/noticia', function (req, res) {
+        app.get('/noticia', (req, res) => {
             app.app.controllers.noticias.noticiaControllers(app, req, res)
         })
 

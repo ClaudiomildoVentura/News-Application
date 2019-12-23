@@ -1,22 +1,22 @@
 try {
-    module.exports.noticiasControllers = function (app, req, res) {
+    module.exports.noticiasControllers = (app, req, res) => {
 
         var connection = app.config.ConnectionDatabase()
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
-        noticiasModel.getNoticias(function (error, result) {
+        noticiasModel.getNoticiasModel((error, result) => {
             res.render('noticias/noticias', { noticias: result })
         })
     }
 
-    module.exports.noticiaControllers = function (app, req, res) {
+    module.exports.noticiaControllers = (app, req, res) => {
 
         var connection = app.config.ConnectionDatabase() //conexão com o bd estabelecida
         var noticiasModel = new app.app.models.NoticiasDAO(connection)
 
-        var id_noticia = req.query
+        var id_noticia = req.query  //relativo a passagem de parametro
 
-        noticiasModel.getNoticia(id_noticia, function (error, result) {
+        noticiasModel.getNoticiasParamsModel(id_noticia, (error, result) => {
             res.render("noticias/noticia", { noticia: result })
         })
     }

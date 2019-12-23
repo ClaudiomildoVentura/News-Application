@@ -1,12 +1,12 @@
 try {
-    module.exports = function (app) {
+    module.exports = (app) => {
 
-        app.get('/formNoticia', function (req, res) {
-            app.app.controllers.admin.formNoticiaControllers(app, req, res)
+        app.get('/formNoticia', (req, res) => {
+            app.app.controllers.admin.formNoticiasControllers(app, req, res)
         })
 
-        app.post('/noticias/salvar', function (req, res) {
-            app.app.controllers.admin.noticias_salvarControllers(app, req, res)
+        app.post('/noticias/salvar', (req, res) => {
+            app.app.controllers.admin.noticiasSalvarControllers(app, req, res)
         })
 
     }
